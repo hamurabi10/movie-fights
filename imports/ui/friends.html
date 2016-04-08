@@ -1,0 +1,51 @@
+<template name="friends">
+	<div class="container">
+		<br>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<header>
+					<div class="col-md-8">
+						<form class="search-users">
+							<input type="text" name="searchUserWord" class="form-control" placeholder="Search friend">
+						</form>
+					</div>
+					<div class="col-md-2">
+						<button class="btn btn-primary btn-sm btn-circle btn-menu friend-requests">R</button>
+						<button class="btn btn-primary btn-sm btn-circle btn-menu back-friends">F</button>
+					</div>
+					<div class="col-md-2">
+						{{> loginButtons}}
+					</div>
+					<div class="clearfix"></div>
+				</header>
+			</div>
+		</div>
+		<br><br>
+		<div class="row">
+			{{#if isSearching}}
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						{{#each users}}
+							<div class="col-md-3 text-center">
+								<img src="http://placehold.it/100x100" class="img-circle">
+								<p>
+									{{username}} 
+									<button class="btn btn-primary btn-sm btn-circle btn-add add-friend">+</button>
+								</p>
+							</div>
+						{{/each}}
+					</div>
+				</div>
+			{{else}}
+				<div class="col-md-8 col-md-offset-2">
+					{{#each friends}}
+						<div class="col-md-3 text-center">
+							<img src="http://placehold.it/100x100" class="img-circle">
+							<p>{{sender.username}}</p>
+						</div>
+					{{/each}}
+				</div>
+			{{/if}}
+		</div>
+	</div>
+</template>
