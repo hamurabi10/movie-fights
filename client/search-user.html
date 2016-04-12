@@ -3,7 +3,7 @@
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <h4 class="modal-title" id="myModalLabel">Users with "{{word}}"</h4>
+	        <h4 class="modal-title" id="myModalLabel"><b>Users with</b> <i>"{{word}}"</i></h4>
 	      </div>
 	      <div class="modal-body">
 	        <div class="row">
@@ -12,12 +12,15 @@
 	        			<img src="http://placehold.it/100x100" class="img-circle">
 	        			<p>
 	        				{{username}} 
-	        				<button class="btn btn-primary btn-sm btn-circle btn-add accept-friend">
-	        					<i class="fa fa-check"></i>
-	        				</button>
-	        				<button class="btn btn-danger btn-sm btn-circle btn-remove deny-friend">
-	        					<i class="fa fa-times"></i>
-	        				</button>
+	        				{{#if isSended _id}}
+		        				<button class="btn btn-warning btn-sm btn-circle btn-add">
+		        					<i class="fa fa-clock-o"></i>
+		        				</button>
+	        				{{else}}
+	        					<button class="btn btn-primary btn-sm btn-circle btn-add add-friend">
+		        					<i class="fa fa-plus"></i>
+		        				</button>
+	        				{{/if}}
 	        			</p>
 	        		</div>
 	        	{{/each}}

@@ -14,14 +14,6 @@ Template.friendRequests.helpers({
 });
 
 Template.friendRequests.events({
-	'click .add-friend': function(event, instance){
-		event.preventDefault();
-		FriendRequests.insert({user: this._id, sender: {_id: Meteor.userId(), username: Meteor.user().username}, status: 'pending'});
-	},
-	'click .friend-requests': function(event, instance){
-		event.preventDefault();
-		instance.searchFriend.set('none');
-	},
 	'click .accept-friend': function(event, instance){
 		event.preventDefault();
 		var doc = this;
