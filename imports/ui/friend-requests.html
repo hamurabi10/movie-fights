@@ -1,0 +1,16 @@
+<template name="friendRequests">
+	{{#each requests}}
+		<div class="col-md-3 text-center">
+			<img src="http://placehold.it/100x100" class="img-circle">
+			<p>
+				{{sender.username}} 
+				<button class="btn btn-primary btn-sm btn-circle btn-add accept-friend">
+					<i class="fa fa-check"></i>
+				</button>
+				<button class="btn btn-danger btn-sm btn-circle btn-remove deny-friend">
+					<i class="fa fa-times"></i>
+				</button>
+			</p>
+		</div>
+	{{/each}}
+</template>

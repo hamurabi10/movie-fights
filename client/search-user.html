@@ -1,0 +1,32 @@
+<template name="searchUser">
+	<div class="modal fade" id="user-search" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title" id="myModalLabel">Users with "{{word}}"</h4>
+	      </div>
+	      <div class="modal-body">
+	        <div class="row">
+	        	{{#each users}}
+	        		<div class="col-md-3 text-center">
+	        			<img src="http://placehold.it/100x100" class="img-circle">
+	        			<p>
+	        				{{username}} 
+	        				<button class="btn btn-primary btn-sm btn-circle btn-add accept-friend">
+	        					<i class="fa fa-check"></i>
+	        				</button>
+	        				<button class="btn btn-danger btn-sm btn-circle btn-remove deny-friend">
+	        					<i class="fa fa-times"></i>
+	        				</button>
+	        			</p>
+	        		</div>
+	        	{{/each}}
+	        </div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</template>

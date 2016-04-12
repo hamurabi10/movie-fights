@@ -1,0 +1,43 @@
+<head>
+  <title>Movie Fights</title>
+</head>
+
+<template name="mainLayout">
+	<div class="container">
+		<br>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<header>
+					{{#if currentUser}}
+						<div class="col-md-8">
+							<form class="search-users">
+								<input type="text" name="searchUserWord" class="form-control" placeholder="Search friend">
+							</form>
+						</div>
+						<div class="col-md-2">
+							<button class="btn btn-primary btn-sm btn-circle btn-menu friend-requests">
+								<i class="fa fa-bell"></i>
+							</button>
+							<button class="btn btn-primary btn-sm btn-circle btn-menu back-friends">
+								<i class="fa fa-child"></i>
+							</button>
+						</div>
+					{{/if}}
+					<div class="col-md-2">
+						{{> loginButtons}}
+					</div>
+					<div class="clearfix"></div>
+				</header>
+			</div>
+		</div>
+		<br><br>
+		
+		{{#if currentUser}}
+			<!-- dynamic template -->
+			{{> Template.dynamic template=main}}
+			<!-- modal search -->
+			{{> searchUser}}
+		{{/if}}
+
+	</div>
+</template>

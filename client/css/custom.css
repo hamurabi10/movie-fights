@@ -13,7 +13,25 @@ body {
 	position: absolute;
 }
 
+.btn-remove {
+	width: 30px;
+	height: 30px;
+	margin-top: -30px;
+	margin-left: -80px;
+	position: absolute;
+}
+
 .btn-menu {
 	width: 30px;
 	height: 30px;
+}
+
+.modal {
+	background: rgba(255, 255, 255, 0.9);
+}
+
+.modal-content {
+	background: transparent;
+	box-shadow: none;
+	border: 0px;
 }
