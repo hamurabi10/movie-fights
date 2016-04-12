@@ -1,2 +1,2 @@
 import { Template } from 'meteor/templating';
-import '../imports/ui/friend-requests.html';
+import '../imports/ui/friend-requests.js';

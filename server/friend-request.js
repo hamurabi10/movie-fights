@@ -6,12 +6,16 @@ Meteor.methods({
 		FriendRequests.update({_id: doc._id}, {$set: {status: 'accepted'}});
 		return Meteor.users.update({_id: userId}, {$set: {'profile.friends': doc.friends}});
 	},
+	denyFriend: function(userId, id){
+		return FriendRequests.update({_id: id}, {$set: {status: 'denied'}});
+	},
 	addFriend: function(userId, doc){
 		return FriendRequests.insert(doc);
 	}
 });
 
 Meteor.publish('myFriendRequests', function(userId){
+	console.log(FriendRequests.find({user: userId}).count());
 	return FriendRequests.find({user: userId});
 });
 

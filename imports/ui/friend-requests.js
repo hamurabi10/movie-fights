@@ -3,8 +3,10 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { FriendRequests } from '../api/friend-requests.js';
 
+import './friend-requests.html';
+
 Template.friendRequests.onCreated(function(){
-	Meteor.subscribe('friendRequests');
+	Meteor.subscribe('myFriendRequests', Meteor.userId());
 });
 
 Template.friendRequests.helpers({
@@ -18,14 +20,22 @@ Template.friendRequests.events({
 		event.preventDefault();
 		var doc = this;
 		// add friend
-		var friendRequests = Meteor.user().profile.friendRequests;
-		if(friendRequests){
-			friendRequests.push({_id: doc.sender._id, username: doc.sender.username});
+		var friends = Meteor.user().profile.friends;
+		if(friends){
+			friends.push({_id: doc.sender._id, username: doc.sender.username});
 		}else{
-			friendRequests = [];
+			friends = [];
 		}
 		// update user
-		Meteor.call('acceptFriend', Meteor.userId(), {_id: doc._id, friendRequests: friendRequests}, function(error){
+		Meteor.call('acceptFriend', Meteor.userId(), {_id: doc._id, friends: friends}, function(error){
+			console.log(error);
+		});
+	},
+	'click .deny-friend': function(event, instance){
+		event.preventDefault();
+		var doc = this;
+		// update user
+		Meteor.call('denyFriend', Meteor.userId(), doc._id, function(error){
 			console.log(error);
 		});
 	}

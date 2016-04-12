@@ -16,7 +16,7 @@ Template.searchUser.helpers({
 		return Session.get('searchUser');
 	},
 	isSended: function(id){
-		const request = FriendRequests.findOne({user: id});
+		const request = FriendRequests.findOne({user: id, 'sender._id': Meteor.userId()});
 		if(request){
 			return true;
 		}
