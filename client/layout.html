@@ -9,18 +9,24 @@
 			<div class="col-md-8 col-md-offset-2">
 				<header>
 					{{#if currentUser}}
-						<div class="col-md-8">
+						<div class="col-md-7">
 							<form class="search-users">
 								<input type="text" name="searchUserWord" class="form-control" placeholder="Search friend">
 							</form>
 						</div>
-						<div class="col-md-2">
-							<button class="btn btn-primary btn-sm btn-circle btn-menu friend-requests">
+						<div class="col-md-3">
+							<a href="/friend-requests" class="btn btn-primary btn-sm btn-circle btn-menu">
 								<i class="fa fa-bell"></i>
-							</button>
-							<button class="btn btn-primary btn-sm btn-circle btn-menu back-friends">
+							</a>
+							<a href="/sended-requests" class="btn btn-primary btn-sm btn-circle btn-menu">
+								<i class="fa fa-envelope"></i>
+							</a>
+							<a href="/friends" class="btn btn-primary btn-sm btn-circle btn-menu">
 								<i class="fa fa-child"></i>
-							</button>
+							</a>
+							<a href="/dashboard" class="btn btn-primary btn-sm btn-circle btn-menu">
+								<i class="fa fa-dashboard"></i>
+							</a>
 						</div>
 					{{/if}}
 					<div class="col-md-2">

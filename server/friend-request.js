@@ -15,7 +15,6 @@ Meteor.methods({
 });
 
 Meteor.publish('myFriendRequests', function(userId){
-	console.log(FriendRequests.find({user: userId}).count());
 	return FriendRequests.find({user: userId});
 });
 
