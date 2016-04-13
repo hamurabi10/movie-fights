@@ -1,0 +1,13 @@
+<Template name="sendedRequests">
+	{{#each requests}}
+		<div class="col-md-3 text-center">
+			<img src="http://placehold.it/100x100" class="img-circle">
+			<button class="btn {{colorIcon status}} btn-sm btn-circle btn-add accept-friend">
+				<i class="fa {{icon status}}"></i>
+			</button>
+			<p>
+				{{userName user}} 
+			</p>
+		</div>
+	{{/each}}
+</Template>

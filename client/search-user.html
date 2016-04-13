@@ -10,17 +10,17 @@
 	        	{{#each users}}
 	        		<div class="col-md-3 text-center">
 	        			<img src="http://placehold.it/100x100" class="img-circle">
+        				{{#if isSended _id}}
+	        				<button class="btn {{colorIcon _id}} btn-sm btn-circle btn-add">
+	        					<i class="fa {{icon _id}}"></i>
+	        				</button>
+        				{{else}}
+        					<button class="btn btn-primary btn-sm btn-circle btn-add add-friend">
+	        					<i class="fa fa-plus"></i>
+	        				</button>
+        				{{/if}}
 	        			<p>
-	        				{{username}} 
-	        				{{#if isSended _id}}
-		        				<button class="btn btn-warning btn-sm btn-circle btn-add">
-		        					<i class="fa fa-clock-o"></i>
-		        				</button>
-	        				{{else}}
-	        					<button class="btn btn-primary btn-sm btn-circle btn-add add-friend">
-		        					<i class="fa fa-plus"></i>
-		        				</button>
-	        				{{/if}}
+	        				{{username}}
 	        			</p>
 	        		</div>
 	        	{{/each}}

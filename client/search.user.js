@@ -20,6 +20,38 @@ Template.searchUser.helpers({
 		if(request){
 			return true;
 		}
+	},
+	icon: function(id){
+		const request = FriendRequests.findOne({user: id, 'sender._id': Meteor.userId()});
+		var icon;
+		switch(request.status){
+			case 'pending':
+				icon = 'fa-clock-o';
+			break;
+			case 'accepted':
+				icon = 'fa-user';
+			break;
+			case 'denied':
+				icon = 'fa-times';
+			break;
+		}
+		return icon;
+	},
+	colorIcon: function(id){
+		const request = FriendRequests.findOne({user: id, 'sender._id': Meteor.userId()});
+		var icon;
+		switch(request.status){
+			case 'pending':
+				icon = 'btn-warning';
+			break;
+			case 'accepted':
+				icon = 'btn-success';
+			break;
+			case 'denied':
+				icon = 'btn-danger';
+			break;
+		}
+		return icon;
 	}
 });
 
