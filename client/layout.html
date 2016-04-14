@@ -3,47 +3,46 @@
 </head>
 
 <template name="mainLayout">
-	<div class="container">
-		<br>
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<header>
-					{{#if currentUser}}
-						<div class="col-md-7">
-							<form class="search-users">
-								<input type="text" name="searchUserWord" class="form-control" placeholder="Search friend">
-							</form>
-						</div>
-						<div class="col-md-3">
-							<a href="/friend-requests" class="btn btn-primary btn-sm btn-circle btn-menu">
-								<i class="fa fa-bell"></i>
-							</a>
-							<a href="/sended-requests" class="btn btn-primary btn-sm btn-circle btn-menu">
-								<i class="fa fa-envelope"></i>
-							</a>
-							<a href="/friends" class="btn btn-primary btn-sm btn-circle btn-menu">
-								<i class="fa fa-child"></i>
-							</a>
-							<a href="/dashboard" class="btn btn-primary btn-sm btn-circle btn-menu">
-								<i class="fa fa-dashboard"></i>
-							</a>
-						</div>
-					{{/if}}
-					<div class="col-md-2">
-						{{> loginButtons}}
+
+	<div class="row nav-menu">
+		<div class="col-md-8 col-md-offset-2">
+			<header>
+				{{#if currentUser}}
+					<div class="col-md-7">
+						<form class="search-users">
+							<input type="text" name="searchUserWord" class="form-control" placeholder="Search friend">
+						</form>
 					</div>
-					<div class="clearfix"></div>
-				</header>
-			</div>
+					<div class="col-md-3 col-flex">
+						<a href="/friend-requests" class="btn btn-success btn-sm btn-circle btn-menu">
+							<i class="fa fa-bell"></i>
+						</a>
+						<a href="/sended-requests" class="btn btn-success btn-sm btn-circle btn-menu">
+							<i class="fa fa-envelope"></i>
+						</a>
+						<a href="/friends" class="btn btn-success btn-sm btn-circle btn-menu">
+							<i class="fa fa-child"></i>
+						</a>
+						<a href="/dashboard" class="btn btn-success btn-sm btn-circle btn-menu">
+							<i class="fa fa-gamepad"></i>
+						</a>
+					</div>
+				{{/if}}
+				<div class="col-md-2">
+					{{> loginButtons}}
+				</div>
+				<div class="clearfix"></div>
+			</header>
 		</div>
+	</div>
+
+	<div class="container">
 		<br><br>
-		
 		{{#if currentUser}}
 			<!-- dynamic template -->
 			{{> Template.dynamic template=main}}
 			<!-- modal search -->
 			{{> searchUser}}
 		{{/if}}
-
 	</div>
 </template>

@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Session } from 'meteor/session';
 import '../imports/startup/accounts-config.js';
+import { Challenges } from '../imports/api/challenges.js';
 
 Template.mainLayout.onCreated(function(){
 	Session.set('searchUser', 'none');

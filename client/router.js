@@ -1,6 +1,6 @@
 FlowRouter.route('/', {
 	action: function(){
-		BlazeLayout.render('mainLayout', {main: 'requests'});
+		BlazeLayout.render('mainLayout', {main: 'friends'});
 	},
 });
 
