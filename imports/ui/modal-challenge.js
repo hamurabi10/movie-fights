@@ -18,6 +18,10 @@ Template.modalChallenge.helpers({
 		if(user){
 			return user.username;
 		}
+	},
+	challengerOnline: function(id){
+		const user = Meteor.users.findOne({_id: id});
+		return user.status.online;
 	}
 });
 

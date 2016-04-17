@@ -11,7 +11,11 @@
 	        		<h4 class="text-center"><b>{{username challenger}}</b> wants to fight</h4>
 		        	<div class="col-md-12 text-center">
 			        	<button type="button" class="btn btn-default deny-challenge">Not now</button>
-			        	<button type="button" class="btn btn-primary accept-challenge">Accept</button>
+			        	{{#if challengerOnline challenger}}
+			        		<button type="button" class="btn btn-primary accept-challenge">Accept</button>
+			        	{{else}}
+			        		<button type="button" class="btn btn-warning accept-challenge">Is not online</button>
+			        	{{/if}}
 		        	</div>
 	        	</div>
 	        	<br>
