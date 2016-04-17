@@ -3,8 +3,8 @@
 		<div class="col-md-3 text-center">
 			<img src="http://placehold.it/100x100" class="img-circle">
 			{{#if isPending _id}}
-				<button class="btn btn-warning btn-sm btn-circle btn-add challenge-friend">
-					<i class="fa fa-clock-o"></i>
+				<button class="btn btn-warning btn-sm btn-circle btn-add">
+					<i class="fa fa-gamepad"></i>
 				</button>
 			{{else}}
 				<button class="btn btn-primary btn-sm btn-circle btn-add challenge-friend">
@@ -16,6 +16,7 @@
 			</p>
 		</div>
 	{{/each}}
-
+	
+	{{pendingChallenge}}
 	{{> modalChallenge}}
 </Template>

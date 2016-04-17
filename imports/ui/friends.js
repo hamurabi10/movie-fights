@@ -1,8 +1,10 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
+import { Session } from 'meteor/session';
 import { Challenges } from '../api/challenges.js';
 
 import './friends.html';
+import './modal-challenge.js';
 
 Template.friendsList.onCreated(function(){
 	Meteor.subscribe('users');
@@ -27,6 +29,13 @@ Template.friendsList.helpers({
 			return true;
 		}
 	},
+	pendingChallenge: function(){
+		// accept fight modal
+		const challenges = Challenges.find({friend: Meteor.userId(), status: 'pending'}).count();
+		if(challenges >= 1){
+			$('#challenge').modal('show');
+		}
+	}
 });
 
 Template.friendsList.events({
@@ -36,4 +45,7 @@ Template.friendsList.events({
 			console.log(error);
 		});
 	}
+});
+
+Template.friendsList.onRendered(function(){
 });

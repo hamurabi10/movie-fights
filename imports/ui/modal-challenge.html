@@ -1,0 +1,23 @@
+<template name="modalChallenge">
+	<div class="modal fade" id="challenge" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h2 class="modal-title text-center">Fight <b>now</b></h2>
+	      </div>
+	      <div class="modal-body">
+	        {{#each challenges}}
+	        	<div class="row">
+	        		<h4 class="text-center"><b>{{username challenger}}</b> wants to fight</h4>
+		        	<div class="col-md-12 text-center">
+			        	<button type="button" class="btn btn-default deny-challenge">Not now</button>
+			        	<button type="button" class="btn btn-primary accept-challenge">Accept</button>
+		        	</div>
+	        	</div>
+	        	<br>
+	        {{/each}}
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</template>
